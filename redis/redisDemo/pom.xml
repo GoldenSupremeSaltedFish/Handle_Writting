@@ -80,7 +80,11 @@
             <artifactId>slf4j-api</artifactId>
             <version>1.7.36</version>
         </dependency>
-
+        <dependency>
+            <groupId>com.google.guava</groupId>
+            <artifactId>guava</artifactId>
+            <version>30.1.1-jre</version>
+        </dependency>
         <!-- SLF4J 与 Logback 的桥接依赖 -->
         <dependency>
             <groupId>ch.qos.logback</groupId>

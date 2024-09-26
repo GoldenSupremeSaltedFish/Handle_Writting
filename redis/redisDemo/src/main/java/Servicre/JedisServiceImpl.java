@@ -1,11 +1,15 @@
 package Servicre;
 
+import com.google.common.hash.BloomFilter;
+import com.google.common.hash.Funnels;
 import lombok.extern.java.Log;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.autoconfigure.data.redis.RedisProperties;
 import org.springframework.stereotype.Service;
 import redis.clients.jedis.Jedis;
 import lombok.extern.slf4j.Slf4j;
+
+import java.nio.charset.StandardCharsets;
 
 @Log
 @Service
@@ -44,5 +48,22 @@ public class JedisServiceImpl {
             log.info(" in here");
             return true;
         }
+    }
+    public void  initpushFilter(String input){
+        Jedis jedis=jedisUtils.getJedis();
+        BloomFilter<String> bloomFilter = BloomFilter.create(Funnels.stringFunnel(StandardCharsets.UTF_8), 500000);
+        bloomFilter.put(input);
+        if (bloomFilter.mightContain(input)) {
+            log.info("already here");
+        } else {
+            System.out.println("definitely not in filter");
+        }
+        jedis.close();
+    }
+
+    public Boolean FilterIsHere(String key){
+        Jedis jedis=jedisUtils.getJedis();
+
+        return null;
     }
 }    
