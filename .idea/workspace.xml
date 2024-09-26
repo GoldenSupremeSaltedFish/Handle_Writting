@@ -4,7 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f475e5b6-c6a0-44da-be8d-95a78a42a64b" name="更改" comment="" />
+    <list default="true" id="f475e5b6-c6a0-44da-be8d-95a78a42a64b" name="更改" comment="">
+      <change beforePath="$PROJECT_DIR$/redis/redisDemo/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/redis/redisDemo/pom.xml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -18,6 +20,9 @@
       </list>
     </option>
   </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 6
 }</component>
@@ -29,6 +34,7 @@
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
     "RunOnceActivity.ShowReadmeOnStart": "true",
+    "git-widget-placeholder": "master",
     "kotlin-language-version-configured": "true",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
@@ -73,6 +79,7 @@
       <workItem from="1725713866548" duration="1333000" />
       <workItem from="1725775283335" duration="3494000" />
       <workItem from="1725780144077" duration="2657000" />
+      <workItem from="1727366476590" duration="52000" />
     </task>
     <servers />
   </component>
