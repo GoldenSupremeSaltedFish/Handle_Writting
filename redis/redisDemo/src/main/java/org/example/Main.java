@@ -14,6 +14,5 @@ public class Main {
     public static void main(String[] args) {
     SpringApplication.run(ApplicationContext.class, args);// 运行 Spring 应用程序
 
-
     }
 }

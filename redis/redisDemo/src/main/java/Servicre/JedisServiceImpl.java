@@ -17,6 +17,7 @@ public class JedisServiceImpl {
 
     @Autowired
     private com.wpc.config.jedis.JedisUtils jedisUtils;
+    private BloomFilter<String> bloomFilter;
     /**
      * 测试String
      * 根据key 查询value值
@@ -51,7 +52,7 @@ public class JedisServiceImpl {
     }
     public void  initpushFilter(String input){
         Jedis jedis=jedisUtils.getJedis();
-        BloomFilter<String> bloomFilter = BloomFilter.create(Funnels.stringFunnel(StandardCharsets.UTF_8), 500000);
+        bloomFilter = BloomFilter.create(Funnels.stringFunnel(StandardCharsets.UTF_8), 500000);
         bloomFilter.put(input);
         if (bloomFilter.mightContain(input)) {
             log.info("already here");
@@ -61,9 +62,17 @@ public class JedisServiceImpl {
         jedis.close();
     }
 
-    public Boolean FilterIsHere(String key){
+    public Boolean FilterIsHere(String input){
         Jedis jedis=jedisUtils.getJedis();
+        if (bloomFilter.mightContain(input)) {
+            log.info("already here");
+            jedis.close();
+            return true;
+        } else {
+            System.out.println("definitely not in filter");
+            jedis.close();
+            return false;
+        }
 
-        return null;
     }
 }    
