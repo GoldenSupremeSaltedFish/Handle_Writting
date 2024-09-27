@@ -9,5 +9,11 @@
         <module name="redis-demo-starter" />
       </profile>
     </annotationProcessing>
+    <bytecodeTargetLevel target="19" />
+  </component>
+  <component name="JavacSettings">
+    <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="redis-demo-starter" options="--add-opens jdk.compiler/com.sun.tools.javac.processing=ALL-UNNAMED" />
+    </option>
   </component>
 </project>

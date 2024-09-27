@@ -2,6 +2,3 @@
     id, username, nickname, `password`
 </sql>
 
-<select id="selectAll" resultType="com.example.entity.User">
-select <include refid="Base_Column_List" /> from user order by id desc
-</select>
