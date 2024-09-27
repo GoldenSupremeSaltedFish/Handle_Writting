@@ -1,0 +1,1 @@
+cmd.exe /X /C ""C:\Program Files\Java\jdk-22\bin\javac.exe" @C:/Users/MI/Desktop/Handle_Writting/redis/redisDemo/target/org.codehaus.plexus.compiler.javac.JavacCompiler10572991600278853298arguments"
