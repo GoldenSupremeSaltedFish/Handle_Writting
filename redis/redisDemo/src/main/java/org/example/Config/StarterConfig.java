@@ -1,11 +1,13 @@
-package Config;
+package org.example.Config;
 
-import Servicre.JedisServiceImpl;
+import org.example.Servicre.JedisServiceImpl;
+import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnMissingBean;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
 @Configuration
+@EnableAutoConfiguration
 public class StarterConfig {
     @Bean
     @ConditionalOnMissingBean
@@ -19,7 +21,7 @@ public class StarterConfig {
     }
     @Bean
     @ConditionalOnMissingBean
-    public com.wpc.config.jedis.JedisUtils jedisUtil() {
-        return new com.wpc.config.jedis.JedisUtils();
+    public JedisUtils jedisUtil() {
+        return new JedisUtils();
     }
 }

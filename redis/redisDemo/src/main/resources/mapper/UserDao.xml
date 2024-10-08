@@ -1,4 +1,0 @@
-<sql id="Base_Column_List">
-    id, username, nickname, `password`
-</sql>
-

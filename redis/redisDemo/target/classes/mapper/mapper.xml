@@ -1,4 +1,12 @@
-<sql id="Base_Column_List">
-    id, username, nickname, `password`
-</sql>
-
+<!-- UserMapper.xml -->
+<mapper namespace="org.example.Mybatis.mapper.UserDao">
+    <insert id="insertUser" parameterType="Mybatis.mapper.User">
+        INSERT INTO users (name, password) VALUES (#{name}, #{password})
+    </insert>
+    <update id="updateUser" parameterType="Mybatis.mapper.User">
+        UPDATE users SET name = #{name}, password = #{password} WHERE id = #{id}
+    </update>
+    <delete id="deleteUser" parameterType="int">
+        DELETE FROM users WHERE id = #{id}
+    </delete>
+</mapper>

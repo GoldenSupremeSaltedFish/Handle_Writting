@@ -1,8 +1,8 @@
 spring:
   redis:
-    host: ${REDIS_HOST:root}
+    host: localhost
     port: 6379
-    password: ${REDIS_PASSWORD:2486}
+    password: 2486
     jedis:
       pool:
         max-idle: 10
@@ -11,9 +11,9 @@ spring:
         max-wait: -1
 
   datasource:
-    url: jdbc:mysql://${DB_HOST:localhost}:3306/${DATABASENAME}
-    username: ${DBUSERNAME:root}
-    password: ${PASSWORD}
+    url: jdbc:mysql://localhost:3306/humphrey
+    username: root
+    password:
     driver-class-name: com.mysql.cj.jdbc.Driver
 
 mybatis:
