@@ -1,5 +1,7 @@
 package org.example;
 
+import org.example.Mybatis.entity.UserDao;
+import org.example.POJO.User;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.autoconfigure.data.redis.RedisProperties;
@@ -15,6 +17,9 @@ import redis.clients.jedis.JedisPool;
 public class Main {
     public static void main(String[] args) {
     SpringApplication.run(ApplicationContext.class, args);// 运行 Spring 应用程序
+        User user=new User(11,"11","11");
+        UserDao userDao=new UserDao();
+        userDao.insertUser(user);
 
     }
 }
