@@ -1,12 +1,16 @@
 package org.example;
 
+import org.apache.ibatis.jdbc.Null;
+
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
 
 public class JDBCTest {
-    public static void main(String[] args) {
-        String url = "jdbc:mysql://localhost:3306/humphrey?useSSL=false&serverTimezone=UTC";
+
+    public static void main(String[] args) throws ClassNotFoundException {
+        Class.forName("com.mysql.cj.jdbc.Driver");
+        String url = "jdbc:mysql://localhost:3306/humphrey?useSSL=false&serverTimezone=UTC&allowPublicKeyRetrieval=true&useSSL=false";
         String username = "root";
         String password = "0000";
 

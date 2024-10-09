@@ -3,7 +3,7 @@ package org.example;
 
 //import
 import org.example.Pojo.User;
-import org.example.controller.UserService;
+import org.example.Util.UserUtils;
 import org.mybatis.spring.annotation.MapperScan;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -16,9 +16,14 @@ import org.springframework.context.ApplicationContext;
 public class Main {
 
     public static void main(String[] args) {
-        SpringApplication.run(Main.class, args); // 运行 Spring 应用程序
+        // 启动 Spring 应用并获取 ApplicationContext
+        ApplicationContext context = SpringApplication.run(Main.class, args);
+
+        // 从 Spring 容器中获取 UserUtils Bean
+        UserUtils userUtils = context.getBean(UserUtils.class);
+
+        // 创建用户并调用方法
         User user = new User(1, "张三", "123456");
-        UserService userService = new UserService(); // 从 Spring 容器中获取 UserService
-        userService.createUser(user);
+        userUtils.createUser(user);
     }
 }

@@ -5,8 +5,8 @@ import org.apache.ibatis.annotations.Mapper;
 
 import org.example.Pojo.User;
 import org.springframework.stereotype.Repository;
-
-
+@Repository
+@Mapper
 public interface UserDao {
 
      int insertUser(User user);

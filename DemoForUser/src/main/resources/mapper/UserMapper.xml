@@ -7,12 +7,12 @@
         <result column="password" jdbcType="VARCHAR" property="password" />
     </resultMap>
     <insert id="insertUser" parameterType="org.example.Pojo.User">
-        INSERT INTO users (name, password) VALUES (#{name}, #{password})
+        INSERT INTO user (name, password) VALUES (#{name}, #{password})
     </insert>
     <update id="updateUser" parameterType="org.example.Pojo.User">
-        UPDATE users SET name = #{name}, password = #{password} WHERE id = #{id}
+        UPDATE user SET name = #{name}, password = #{password} WHERE id = #{id}
     </update>
     <delete id="deleteUser" parameterType="int">
-        DELETE FROM users WHERE id = #{id}
+        DELETE FROM user WHERE id = #{id}
     </delete>
 </mapper>

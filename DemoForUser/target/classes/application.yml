@@ -1,11 +1,9 @@
 spring:
-
   datasource:
-    url: jdbc:mysql://localhost:3306/humphrey
+    url: jdbc:mysql://localhost:3306/humphrey?useSSL=false&serverTimezone=UTC&allowPublicKeyRetrieval=true
     username: root
-    password: 0000
+    password: "0000"
     driver-class-name: com.mysql.cj.jdbc.Driver
-
 mybatis:
   mapper-locations: classpath:mapper/*.xml
   type-aliases-package: org.example.Pojo
